@@ -1,0 +1,12 @@
+{
+    "nico": {
+        "imgUrl": "./dist/img/nico.jpg",
+        "h3Text": "矢泽妮可（やざわ にこ）",
+        "pText": "CV：徳井青空"
+    },
+    "nozomi": {
+        "imgUrl": "./dist/img/nozomi.jpg",
+        "h3Text": "东条希（とうじょう のぞみ）",
+        "pText": "CV：楠田亚衣奈"
+    }
+}

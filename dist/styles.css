@@ -1,0 +1,495 @@
+/*reset css*/
+body,div,h1,h2,h3,h4,h5,h6,form,input,table,th,tr,td,ul,ol,li,a,img,button,select,option,b,i,strong,textarea,br,dl,dt,dd,em,iframe,label,link,p,link,meta,span,style,figure,fieldset{padding:0;margin:0;}
+a{text-decoration:none;}
+a img{border:0;}/*去除a链接里img默认的边框*/
+ul,ol{list-style:none;}
+table{border-collapse:collapse;border-spacing:0;}
+input,fieldset,button{outline: none;border: none;}
+button{cursor: pointer}
+textarea{resize:none}
+textarea:focus{outline: none;border: none;}
+/*end reset css*/
+@media screen and (max-width:1280px) {
+    header,
+    main,
+    footer {
+        width: 1280px;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    header,
+    main {
+        width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+* {
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+header {
+    position: relative;
+}
+
+.header-carousel {
+    position: relative;
+    height: 605px;
+    overflow: hidden;
+}
+
+.hc-imgList {
+    position: absolute;
+    width: 7680px;
+    height: 605px;
+    overflow: hidden;
+}
+
+.hc-imgList li {
+    float: left
+}
+
+.hc-imgList img {
+    width: 1280px;
+    height: 605px;
+}
+
+.header-carousel .btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-family: 'SimHei','SimSun';
+    border-radius: 50%;
+    text-align: center;
+    background-color: #333;
+    opacity: 0.8;
+}
+
+.header-carousel .btn-pre {
+    left: 10px
+}
+
+.header-carousel .btn-next {
+    right: 10px
+}
+
+.hc-dotList {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center
+}
+
+.hcd-dot {
+    display: inline-block
+}
+
+.hcd-dot li {
+    display: inline-block;
+    width: 20px;
+    height: 6px;
+    margin: 0 5px;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer
+}
+
+.hcd-dot .active {
+    background-color: #666
+}
+
+header nav {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 75px;
+    line-height: 75px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hn-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 75px;
+}
+
+.hn-wrapper a {
+    width: 169px;
+    height: 50px;
+}
+
+.hn-wrapper a img {
+    vertical-align: middle;
+    width: 169px;
+    height: 50px;
+}
+
+.hnw-ul {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+}
+
+.hnw-ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.hnw-ul li a {
+    vertical-align: middle;
+    color: #e3007f;
+    font-size: 18px;
+    text-shadow: 0 0 5px #fff;
+}
+
+.header-content {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    height: 280px;
+    text-align: center;
+}
+
+.header-content a {
+    display: block;
+    width: 400px;
+    height: 118px;
+    margin-bottom: 40px;
+    background-size: 400px 118px;
+}
+
+.header-content a img {
+    width: 400px;
+    height: 118px;
+}
+
+.header-content h2 {
+    margin: 0 auto 45px auto;
+    color: #e3007f;
+}
+
+.header-content button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'SimHei','SimSun';
+    font-size: 18px;
+    color: #fff;
+    background-color: #e3007f;
+}
+
+.header-goTop {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    font-family: 'SimHei','SimSun';
+    font-size: 18px;
+    color: #fff;
+    background-color: #e3007f;
+    border-radius: 10px;
+}
+
+.main-section1 {
+    height: 680px;
+    padding-top: 100px;
+    background-color: #edfbff;
+    text-align: center;
+}
+
+.main-section1 h2 {
+    margin: 0 auto 50px auto;
+    width: 100px;
+    color: #e3007f;
+}
+
+.ms1-p {
+    margin: 0 auto 90px auto;
+    width: 900px;
+    height: 140px;
+    line-height: 1.75;
+    color: #777;
+    font-size: 20px;
+}
+
+.ms1-content {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 900px;
+    height: 275px;
+}
+
+.ms1-content figure {
+    width: 200px;
+    height: 275px;
+    text-align: center;
+}
+
+.ms1-content figure img {
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 100px;
+    width: 100px;
+}
+
+.ms1-content figcaption h3 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.ms1-content figcaption p {
+    color: #777;
+    line-height: 1.75;
+    font-size: 15px;
+
+}
+
+.main-section2 {
+    height: 1830px;
+    padding-top: 50px;
+    background-color: #f1f1f1;
+}
+
+.ms2-h2 {
+    margin-bottom: 60px;
+    text-align: center;
+    color: #e3007f;
+}
+
+.main-section2 ul {
+    width: 1240px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+}
+
+.main-section2 li {
+    position: relative;
+    text-align: center;
+}
+
+.main-section2 li:nth-child(1) {
+    padding-bottom: 50px;
+    height: 420px;
+}
+
+.main-section2 li:nth-child(2) {
+    padding-bottom: 200px;
+    height: 265px;
+}
+
+.main-section2 li:nth-child(3) {
+    height: 470px;
+}
+
+.main-section2 li:nth-child(4) {
+    height: 190px;
+}
+/*使用浮动布局会覆盖fixed,所以这里不能用*/
+.main-section2 li div{
+    position: absolute;
+    width: 480px;
+}
+/*:nth-child用法是同级节点的获取，即.main-section2 li:nth-child(2) div，非.main-section2 li div:nth-child(2) 难怪之前觉得有点bug，用法错误了*/
+.main-section2 li:nth-child(1) div,
+.main-section2 li:nth-child(3) div {
+    left: 30px;
+    text-align: right;
+}
+
+.main-section2 li:nth-child(2) div,
+.main-section2 li:nth-child(4) div {
+    right: 30px;
+    text-align: left;
+}
+
+.main-section2 li h3,
+.main-section2 li h2 {
+    font-weight: normal;
+}
+
+.main-section2 li p {
+    line-height: 1.75;
+    color: #777;
+    font-size: 15px;
+}
+
+.main-section2 li img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    opacity: 0.8;
+}
+
+.main-section2 li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 155px;
+    border: 1px solid #ccc;
+    height: calc(100% - 155px);
+}
+
+.main-section2 li:nth-child(4):after {
+    display: none;
+}
+
+.main-section3 {
+    padding: 55px 0 70px 0;
+    text-align: center;
+    background-color: #edfbff;
+}
+
+.main-section3 h2 {
+    margin-bottom: 90px;
+    color: #e3007f;
+}
+
+.ms3-content {
+    display: flex;
+    margin:0 auto 10px auto;
+    width: 1050px;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.ms3-content figure {
+    width: 304px;
+    height: 270px;
+}
+
+.ms3-content figure img {
+    width: 300px;
+    height: 200px;
+    border-radius: 25px;
+    border: 2px solid #ccc;
+}
+
+.main-section3 button {
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #e3007f;
+}
+
+.main-section4 {
+    padding: 50px 0 70px 0;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.main-section4 h2 {
+    margin-bottom: 50px;
+    color: #e3007f;
+}
+
+.ms4-content {
+    display: flex;
+    margin: 0 auto;
+    width: 1010px;
+    justify-content: space-around;
+}
+
+.ms4-content figure {
+    width: 430px;
+}
+
+.ms4-content figure img {
+    width: 300px;
+    height: 380px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border: 2px solid #fff;
+}
+
+.ms4-content figure h3 {
+    font-weight: normal;
+}
+
+.main-section5 {
+    padding: 50px 0 50px 0;
+    background-color: #edfbff;
+}
+
+.main-section5 h2 {
+    margin-bottom: 50px;
+    text-align: center;
+    color: #e3007f;
+}
+
+.main-section5 form {
+    margin: 0 auto;
+    width: 860px;
+}
+/*同级元素中但凡有float元素的，要么用个div父元素（overflow: hidden;）把float元素包起来;要么同级的其他元素使用清除浮动。目的都是为了避免float元素对同级其他元素的影响*/
+.main-section5 form div {
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+.main-section5 form fieldset {
+    float: left;
+    margin-left: 23px;
+    width: 400px;
+}
+
+.main-section5 fieldset input,
+.main-section5 form textarea {
+    width: 350px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.main-section5 form textarea {
+    float: left;
+    height: 192px;
+    margin-left: 30px;
+}
+
+.ms5f-submit {
+    display: block;
+    width: 150px;
+    height: 44px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+    background-color: #e3007f;
+    border: 2px solid #e3007f;
+    border-radius: 10px;
+}
+
+footer {
+    height: 125px;
+    line-height: 125px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+footer p {
+    display: inline-block;
+    vertical-align: middle;
+    font: 20px bold;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
