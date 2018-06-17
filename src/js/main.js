@@ -1,11 +1,14 @@
 import {Carousel} from "./carousel.js";
 import {ajax} from "./ajax.js";
+import {ImgLazyLoad} from "./imgLazyLoad.js"
 //const $ = require('jquery');
 require('../css/style.css');
 
             class GoTop {
                 constructor(oTarget) {
                     this.oGoTop = oTarget;
+                    this.timer1 = null;
+                    this.timer2 = null;
                     this.init();
                 }
                 init() {
@@ -14,40 +17,59 @@ require('../css/style.css');
                         $nav = $oGoTop.parent().children('nav');
                     $nav.stop = false;
                     $win.on('scroll', () => {
-                        if($win.scrollTop() > 500 && $win.width() >= 1280)
-                        {
-                            $oGoTop.css('display') === 'none' && (console.log('show'), $oGoTop.toggle());
-                        }
-                        else
-                        {
-                            $oGoTop.css('display') === 'block' && (console.log('hide'), $oGoTop.toggle());
-                        }
+                        this.debounce(() => {
+                            if($win.scrollTop() > 500 && $win.width() >= 1280)
+                            {
+                                $oGoTop.css('display') === 'none' && (console.log('show'), $oGoTop.toggle());
+                            }
+                            else
+                            {
+                                $oGoTop.css('display') === 'block' && (console.log('hide'), $oGoTop.toggle());
+                            }
+                        });
                     });
                     $win.on('resize', () => {
-                        if($win.width() < 1280)
-                        {
-                            if($nav.width() != 1280)
+                        this.debounce(() => {
+                            if($win.width() < 1280)
                             {
-                                console.log('<1280');
-                                $oGoTop.hide();
-                                $nav.css({"width": 1280});
-                                $nav.stop = false;
+                                if($nav.width() != 1280)
+                                {
+                                    console.log('<1280');
+                                    $oGoTop.hide();
+                                    $nav.css({"width": 1280});
+                                    $nav.stop = false;
+                                }
                             }
-                        }
-                        else
-                        {
-                            if(!$nav.stop)
+                            else
                             {
-                                console.log('>=1280');
-                                $oGoTop.show();
-                                $nav.css({"width": "100%"});
-                                $nav.stop = true;
+                                if(!$nav.stop)
+                                {
+                                    console.log('>=1280');
+                                    $win.scrollTop() > 500 && $oGoTop.show();
+                                    $nav.css({"width": "100%"});
+                                    $nav.stop = true;
+                                }
                             }
-                        }
+                        });
                     });
                     $oGoTop.on('click', () => {
                         $('html,body').animate({'scrollTop': 0}, 'fast');
                     });
+                }
+                debounce(func) {
+                    clearTimeout(this.timer1);
+                    this.timer1 = setTimeout(() => {
+                        func();
+                    }, 100);
+                }
+                throttle(func) {
+                    if(!this.timer2)
+                    {
+                        this.timer2 = setTimeout(() => {
+                            func();
+                            this.timer2 = null;
+                        }, 1000);
+                    }
                 }
             }
 
@@ -135,8 +157,10 @@ require('../css/style.css');
             $(document).ready(function() {
                 let oCar = document.getElementsByClassName('header-carousel')[0],
                     oGoTop = document.getElementsByClassName('header-goTop')[0],
-                    oRdr = document.getElementsByClassName('main-section3')[0].getElementsByTagName('button')[0];
+                    oRdr = document.getElementsByClassName('main-section3')[0].getElementsByTagName('button')[0],
+                    aImg = document.getElementsByTagName('img');
                 new Carousel(oCar);
                 new GoTop(oGoTop);
                 new ajaxToRender(oRdr);
+                new ImgLazyLoad(aImg);
             });

@@ -110,7 +110,7 @@ module.exports = {
     },
     //项目里配置了自动提取node_modules里用到的模块如jquery，也可以在原模板里面通过第三方cdn引入，又是另一种配置了。
     devServer: {
-        contentBase: './dist'
+        contentBase: './'
     },
     devtool: 'inline-source-map'
 };
